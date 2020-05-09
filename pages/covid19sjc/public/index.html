@@ -3,37 +3,106 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
         <title>Covid-19 em São José dos Campos</title>
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
     </head>
     <body>
 
-        <h1>Covid-19 em São José dos Campos</h1>
-
-        <p>
-            Casos positivos: <span id="known"></span><br />
-            Casos recuperados: <span id="recovered"></span>
-        </p>
+        <h1>Covid-19 em São José dos Campos - SP</h1>
+        <h4>Dados obtidos através do <a href="https://www.sjc.sp.gov.br/servicos/saude/coronavirus/informe-epidemiologico/" target="_blank">Informe Epidemiológico</a> postado diariamente
+            pela prefeitura da cidade.
+        </h4>
+        <br>
         
-        <canvas id="daily-new-cases"></canvas>
+        <!-- <p>
+            Casos positivos: <span id="known"></span><br />
+            Casos recuperados: <span id="recovered"></span><br />
+            Óbitos confirmados: <span id="down"></span><br />
+        </p> -->
+        
+        <script>
+            async function getData() {
+                const yKnown = [];
+                const yRecovered = [];
+                const yDown = [];
+                
+                const response = await fetch('data.csv');
+                const data = await response.text();
+                
+                const table = data.split('\n').slice(1);
+                table.forEach(row => {
+                    const columns = row.split(',');
+                    const knownCases = columns[9];
+                    const recoveredCases = columns[17];
+                    const downCases = columns[16];
 
+                    yKnown.push(knownCases);
+                    yRecovered.push(recoveredCases);
+                    yDown.push(downCases);
+                });
+
+                return { yKnown, yRecovered, yDown };
+            }
+        </script>
+
+        <div class="chart-container" style="position: relative; height: 60vh; width: 90vw;">
+            <canvas id="covid-sjc"></canvas>
+        </div>
+        
         <script>
             
             chartIt();
             
             async function chartIt() {
                 const data = await getData();
-                const ctx = document.getElementById('daily-new-cases').getContext('2d');
+                const ctx = document.getElementById('covid-sjc').getContext('2d');
+                const options = {
+                    maintainAspectRatio: false,
+                    scales: {
+                        yAxes: [{
+                            gridLines: {
+                                display: true,
+                                color: "rgba(255, 255, 255, 0.05)",
+                            },
+                            stacked: false
+                        }],
+                        xAxes: [{
+                            gridLines: {
+                                display: true,
+                                color: ['rgba(255, 255, 255, 0.5)'],
+                            }
+                        }]
+                    }
+                };
                 const myChart = new Chart(ctx, {
+                    options: options,
                     type: 'line',
                     data: {
                         labels: data.xs,
-                        datasets: [{
-                            label: 'Casos novos por dia em São José dos Campos - SP',
-                            data: data.ys,
-                            backgroundColor: ['rgba(110, 220, 191, 0.2)'],
-                            borderColor: ['rgba(110, 220, 191, 1)'],
-                            borderWidth: 1,
+                        datasets: [
+                        {
+                            label: 'Positivos',
+                            data: data.yKnown,
+                            backgroundColor: ['rgba(246, 36, 89, 0.5)'],
+                            borderColor: ['rgba(246, 36, 89, 1)'],
+                            borderWidth: 3,
+                            fill: false
+                        },
+                        {
+                            label: 'Recuperados',
+                            data: data.yRecovered,
+                            backgroundColor: ['rgba(11, 156, 49, 0.5)'],
+                            borderColor: ['rgba(11, 156, 49, 1)'],
+                            borderWidth: 3,
+                            fill: false
+                        },
+                        {
+                            label: 'Óbitos',
+                            data: data.yDown,
+                            backgroundColor: ['rgba(255, 255, 255, 0.5)'],
+                            borderColor: ['rgba(255, 255, 255, 1)'],
+                            borderWidth: 3,
                             fill: false
                         }]
                     },
@@ -42,7 +111,9 @@
 
             async function getData() {
                 const xs = [];
-                const ys = [];
+                const yKnown = [];
+                const yRecovered = [];
+                const yDown = [];
                 
                 const response = await fetch('data.csv');
                 const data = await response.text();
@@ -51,13 +122,17 @@
                 table.forEach(row => {
                     const columns = row.split(',');
                     const days = columns[0];
-                    const cases = columns[9];
+                    const knownCases = columns[9];
+                    const recoveredCases = columns[17];
+                    const downCases = columns[16];
+
                     xs.push(days);
-                    ys.push(cases);
-                    // console.log(cases);
+                    yKnown.push(knownCases);
+                    yRecovered.push(recoveredCases);
+                    yDown.push(downCases);
                 });
-                
-                return { xs, ys };
+
+                return { xs, yKnown, yRecovered, yDown };
             }
 
             // async function getKnownAndRecovered() {
@@ -74,5 +149,8 @@
             // getKnownAndRecovered();
         </script>
     </body>
+    <br>
+    <footer>
+        <p>&copy; <a href="http://danbuck84.github.io/" target="_blank">Daniel Buck</a>, Maio de 2020.</p>
+    </footer>
     </html>
-    
