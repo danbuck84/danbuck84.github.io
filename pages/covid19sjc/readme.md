@@ -7,4 +7,4 @@ Buscando dados da Prefeitura de São José dos Campos em:
 https://www.sjc.sp.gov.br/servicos/saude/coronavirus/informe-epidemiologico/
 
 O projeto concluído poderá ser encontrado em:
-http://danbuck84.github.io/covid19sjc
+https://danbuck84.github.io/pages/covid19sjc/public/index.html
