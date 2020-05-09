@@ -6,12 +6,14 @@
         <link rel="stylesheet" href="style.css">
         <title>Covid-19 em São José dos Campos</title>
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script>
     </head>
     <body>
 
         <h1>Covid-19 em São José dos Campos - SP</h1>
-        <h4>Dados obtidos através do <a href="https://www.sjc.sp.gov.br/servicos/saude/coronavirus/informe-epidemiologico/" target="_blank">Informe Epidemiológico</a> postado diariamente
-            pela prefeitura da cidade.
+
+        <h4>Dados obtidos através do <a href="https://www.sjc.sp.gov.br/servicos/saude/coronavirus/informe-epidemiologico/" target="_blank">Informe Epidemiológico</a>
+            postado diariamente pela prefeitura da cidade.
         </h4>
         <br>
         
@@ -21,7 +23,7 @@
             Óbitos confirmados: <span id="down"></span><br />
         </p> -->
         
-        <script>
+        <!-- <script>
             async function getData() {
                 const yKnown = [];
                 const yRecovered = [];
@@ -44,7 +46,7 @@
 
                 return { yKnown, yRecovered, yDown };
             }
-        </script>
+        </script> -->
 
         <div class="chart-container" style="position: relative; height: 60vh; width: 90vw;">
             <canvas id="covid-sjc"></canvas>
@@ -58,33 +60,49 @@
                 const data = await getData();
                 const ctx = document.getElementById('covid-sjc').getContext('2d');
                 const options = {
+                    responsive: true,
                     maintainAspectRatio: false,
+                    tooltips: {
+                        mode: 'index',
+                        intersect: false
+                    },
+                    hover: {
+                        mode: 'nearest',
+                        intersect: false
+                    },
                     scales: {
                         yAxes: [{
+                            display: true,
                             gridLines: {
                                 display: true,
-                                color: "rgba(255, 255, 255, 0.05)",
+                                color: "rgba(255, 255, 255, 0.05)"
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Casos'
                             },
                             stacked: false
                         }],
                         xAxes: [{
+                            display: true,
                             gridLines: {
                                 display: true,
-                                color: ['rgba(255, 255, 255, 0.5)'],
-                            }
+                                color: ['rgba(255, 255, 255, 0.5)']
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Dias'
+                            },
                         }]
                     }
                 };
-                const myChart = new Chart(ctx, {
-                    options: options,
-                    type: 'line',
-                    data: {
-                        labels: data.xs,
+                const graph = {
+                    labels: data.xs,
                         datasets: [
                         {
                             label: 'Positivos',
                             data: data.yKnown,
-                            backgroundColor: ['rgba(246, 36, 89, 0.5)'],
+                            backgroundColor: ['rgba(246, 36, 89, 1)'],
                             borderColor: ['rgba(246, 36, 89, 1)'],
                             borderWidth: 3,
                             fill: false
@@ -92,7 +110,7 @@
                         {
                             label: 'Recuperados',
                             data: data.yRecovered,
-                            backgroundColor: ['rgba(11, 156, 49, 0.5)'],
+                            backgroundColor: ['rgba(11, 156, 49, 1)'],
                             borderColor: ['rgba(11, 156, 49, 1)'],
                             borderWidth: 3,
                             fill: false
@@ -100,12 +118,16 @@
                         {
                             label: 'Óbitos',
                             data: data.yDown,
-                            backgroundColor: ['rgba(255, 255, 255, 0.5)'],
+                            backgroundColor: ['rgba(255, 255, 255, 1)'],
                             borderColor: ['rgba(255, 255, 255, 1)'],
                             borderWidth: 3,
                             fill: false
                         }]
-                    },
+                };
+                const myChart = new Chart(ctx, {
+                    options: options,
+                    type: 'line',
+                    data: graph,
                 });
             }
 
@@ -134,19 +156,6 @@
 
                 return { xs, yKnown, yRecovered, yDown };
             }
-
-            // async function getKnownAndRecovered() {
-            //     const response = await fetch('covid_data.json');
-            //     const data = await response.json();
-            //     const { knownCases, recoveredCases } = data;
-        
-            //     document.getElementById('known').value = knownCases;
-            //     document.getElementById('recovered').value = recoveredCases;
-            //     console.log(knownCases);
-            //     console.log(recoveredCases);
-            // }
-            
-            // getKnownAndRecovered();
         </script>
     </body>
     <br>
