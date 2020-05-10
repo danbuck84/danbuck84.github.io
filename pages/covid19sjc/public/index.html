@@ -9,156 +9,29 @@
         <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script> -->
     </head>
     <body>
-
-        <h1>Covid-19 em São José dos Campos - SP</h1>
-
-        <h4>Dados obtidos através do <a href="https://www.sjc.sp.gov.br/servicos/saude/coronavirus/informe-epidemiologico/" target="_blank">Informe Epidemiológico</a>
-            postado diariamente pela prefeitura da cidade.
-        </h4>
-
-        <h6>Última atualização: 09/05/2020</h6>
-        <br>
-        
-        <!-- <p>
-            Casos positivos: <span id="known"></span><br />
-            Casos recuperados: <span id="recovered"></span><br />
-            Óbitos confirmados: <span id="down"></span><br />
-        </p> -->
-        
-        <!-- <script>
-            async function getData() {
-                const yKnown = [];
-                const yRecovered = [];
-                const yDown = [];
-                
-                const response = await fetch('data.csv');
-                const data = await response.text();
-                
-                const table = data.split('\n').slice(1);
-                table.forEach(row => {
-                    const columns = row.split(',');
-                    const knownCases = columns[9];
-                    const recoveredCases = columns[17];
-                    const downCases = columns[16];
-
-                    yKnown.push(knownCases);
-                    yRecovered.push(recoveredCases);
-                    yDown.push(downCases);
-                });
-
-                return { yKnown, yRecovered, yDown };
-            }
-        </script> -->
-
-        <div class="chart-container" style="position: relative; height: 60vh; width: 90vw;">
-            <canvas id="covid-sjc"></canvas>
+        <div class="container">
+            <h1>Covid-19 em São José dos Campos - SP</h1>
+            
+            <h4>Dados obtidos através do
+                <a href="https://www.sjc.sp.gov.br/servicos/saude/coronavirus/informe-epidemiologico/" target="_blank">
+                    Informe Epidemiológico</a> postado diariamente pela prefeitura da cidade.
+            </h4>
+            
+            <h6>Última atualização: 09/05/2020</h6>
+            
+            <div class="toggle">
+                <input id="switch" type="checkbox" name="theme">
+                <label for="switch">Toggle</label>
+            </div>
+            <br>
+            
+            <div class="chart-container" style="position: relative; height: 60vh; width: 90vw;">
+                <canvas id="covid-sjc"></canvas>
+            </div>
+            
+            <script src="chartIt.js"></script>
+            <script src="scripts.js"></script>
         </div>
-        
-        <script>
-            
-            chartIt();
-            
-            async function chartIt() {
-                const data = await getData();
-                const ctx = document.getElementById('covid-sjc').getContext('2d');
-                const options = {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    tooltips: {
-                        mode: 'index',
-                        intersect: false
-                    },
-                    hover: {
-                        mode: 'nearest',
-                        intersect: false
-                    },
-                    scales: {
-                        yAxes: [{
-                            display: true,
-                            gridLines: {
-                                display: true,
-                                color: "rgba(255, 255, 255, 0.05)"
-                            },
-                            scaleLabel: {
-                                display: true,
-                                labelString: 'Casos'
-                            },
-                            stacked: false
-                        }],
-                        xAxes: [{
-                            display: true,
-                            gridLines: {
-                                display: true,
-                                color: ['rgba(255, 255, 255, 0.5)']
-                            },
-                            scaleLabel: {
-                                display: true,
-                                labelString: 'Dias'
-                            },
-                        }]
-                    }
-                };
-                const graph = {
-                    labels: data.xs,
-                        datasets: [
-                        {
-                            label: 'Positivos',
-                            data: data.yKnown,
-                            backgroundColor: ['rgba(246, 36, 89, 1)'],
-                            borderColor: ['rgba(246, 36, 89, 1)'],
-                            borderWidth: 3,
-                            fill: false
-                        },
-                        {
-                            label: 'Recuperados',
-                            data: data.yRecovered,
-                            backgroundColor: ['rgba(11, 156, 49, 1)'],
-                            borderColor: ['rgba(11, 156, 49, 1)'],
-                            borderWidth: 3,
-                            fill: false
-                        },
-                        {
-                            label: 'Óbitos',
-                            data: data.yDown,
-                            backgroundColor: ['rgba(255, 255, 255, 1)'],
-                            borderColor: ['rgba(255, 255, 255, 1)'],
-                            borderWidth: 3,
-                            fill: false
-                        }]
-                };
-                const myChart = new Chart(ctx, {
-                    options: options,
-                    type: 'line',
-                    data: graph,
-                });
-            }
-
-            async function getData() {
-                const xs = [];
-                const yKnown = [];
-                const yRecovered = [];
-                const yDown = [];
-                
-                const response = await fetch('data.csv');
-                const data = await response.text();
-                
-                const table = data.split('\n').slice(1);
-                table.forEach(row => {
-                    const columns = row.split(',');
-                    const days = columns[0];
-                    const knownCases = columns[9];
-                    const recoveredCases = columns[17];
-                    const downCases = columns[16];
-
-                    xs.push(days);
-                    yKnown.push(knownCases);
-                    yRecovered.push(recoveredCases);
-                    yDown.push(downCases);
-                });
-
-                return { xs, yKnown, yRecovered, yDown };
-            }
-        </script>
     </body>
     <br>
     <footer>
