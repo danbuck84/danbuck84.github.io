@@ -1,0 +1,71 @@
+<!-- Média = (7 x Prova) + (2 x PIM) + (1 x AVA) / 10 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIP EaD - Cálculo da média</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+</head>
+<body>
+<div class="container">
+    <img src="https://unipararipina.com.br/franquias/2/36166/editor-html/1089620.png" alt="" id="unip-logo">
+
+    <form action="calculo.html" class="nota-form">
+        <h1>Calcule sua média</h1>
+
+        <div class="txtb">
+            <input type="text" id="prova">
+            <span data-placeholder="Nota da Prova"></span>
+        </div>
+        <div class="txtb">
+            <input type="text" id="pim">
+            <span data-placeholder="Nota do PIM"></span>
+        </div>
+        <div class="txtb">
+            <input type="text" id="ava">
+            <span data-placeholder="Nota do AVA"></span>
+        </div>
+
+        <button class="calcbtn" id="btn" onclick="CALC()">Calcular</button>
+
+        <p class="bottom-text" id="result">Rufem os tambores...</p>
+
+    </form>
+
+    <script type="text/javascript">
+        $(".txtb input").on("focus", function() {
+            $(this).addClass("focus");
+        });
+
+        $(".txtb input").on("blur", function() {
+            if($(this).val() == "")
+            $(this).removeClass("focus");
+        });
+
+        function CALC() {
+            var prova = document.getElementById("prova").value;
+            var pim = document.getElementById("pim").value;
+            var ava = document.getElementById("ava").value;
+
+            var nota = (7 * prova + 2 * pim + 1 * ava ) / 10;
+            
+            document.getElementById("result").innerHTML = "Sua média final foi de " + nota;
+        };
+
+    </script>
+
+    <!-- <input type="text" id="prova">
+    <input type="text" id="pim">
+    <input type="text" id="ava">
+    <button id="btn" onclick="CALC()">Resultado</button>
+    <h1 id="result"></h1> -->
+</div>
+<footer id="footer">
+    &copy; <a href="http://danbuck84.github.io/" target="_blank">Daniel Buck</a>, Maio de 2020
+</footer>
+
+</body>
+</html>
