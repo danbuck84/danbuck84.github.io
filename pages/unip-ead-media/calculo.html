@@ -10,9 +10,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
 </head>
 <body>
-<div class="container">
-    <img src="https://unipararipina.com.br/franquias/2/36166/editor-html/1089620.png" alt="" id="unip-logo">
+    <header>
+        <div class="row">
+          <div class="logo-row">
+            <a href="https://www.unip.br/ead/" target="_blank"><img src="https://149365621.v2.pressablecdn.com/wp-content/uploads/2018/02/uni-sbc-logo.png" alt="logo" class="logo" id="unip-logo"></a>
+          </div>
+        </div>
+    </header>
 
+    <div class="container">
     <form action="calculo.html" class="nota-form">
         <h1>Calcule sua média</h1>
 
@@ -34,38 +40,12 @@
         <p class="bottom-text" id="result">Rufem os tambores...</p>
 
     </form>
-
-    <script type="text/javascript">
-        $(".txtb input").on("focus", function() {
-            $(this).addClass("focus");
-        });
-
-        $(".txtb input").on("blur", function() {
-            if($(this).val() == "")
-            $(this).removeClass("focus");
-        });
-
-        function CALC() {
-            var prova = document.getElementById("prova").value;
-            var pim = document.getElementById("pim").value;
-            var ava = document.getElementById("ava").value;
-
-            var nota = (7 * prova + 2 * pim + 1 * ava ) / 10;
-            
-            document.getElementById("result").innerHTML = "Sua média final foi de " + nota;
-        };
-
-    </script>
-
-    <!-- <input type="text" id="prova">
-    <input type="text" id="pim">
-    <input type="text" id="ava">
-    <button id="btn" onclick="CALC()">Resultado</button>
-    <h1 id="result"></h1> -->
+    
+    <script src="script.js"></script>
+    
 </div>
-<footer id="footer">
-    &copy; <a href="http://danbuck84.github.io/" target="_blank">Daniel Buck</a>, Maio de 2020
-</footer>
-
 </body>
+<footer class="footer">
+    <p>&copy; <a href="http://danbuck84.github.io/" target="_blank">Daniel Buck</a>, Maio de 2020.</p>
+</footer>
 </html>

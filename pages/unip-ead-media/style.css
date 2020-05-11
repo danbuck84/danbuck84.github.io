@@ -9,8 +9,15 @@
 }
 
 html, body {
-    height: 100%;
+    min-height: 100%;
     background-image: linear-gradient(120deg,#3498db,#6edcbf);
+}
+
+.logo {
+    position: absolute;
+    left: 49%;
+    top: 9%;
+    transform: translate(-50%, -50%)
 }
 
 .container {
@@ -18,19 +25,33 @@ html, body {
 }
 
 img {
-    position: relative;
-    width: 30%;
-    height: 30%;
-    left: 35%;
+    position: fixed;
+    left: 0;
+    top: 50px;
+    width: 20%;
+    /* height: 30%; */
 }
 
-.nota-form {
+/* .nota-form {
     display: block;
     width: 360px;
     background: #f1f1f1;
     height: 580px;
     padding: 80px 40px;
     border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+} */
+
+.nota-form {
+    width: 360px;
+    padding: 60px 35px 35px 35px;
+    border-radius: 40px;
+    background: #ecf0f3;
+    box-shadow: inset 8px 8px 8px #cbced1,
+                inset -8px -8px 8px #ffffff;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -89,6 +110,7 @@ img {
 
 .calcbtn {
     display: block;
+    font-size: 20px;
     width: 100%;
     height: 50px;
     border: none;
@@ -106,14 +128,16 @@ img {
 
 .bottom-text {
     margin-top: 60px;
-    text-align: center;
     font-style: 13px;
+    text-align: center;
+    font-size: 22px;
 }
 
 .footer {
-    position: relative;
-    height: 100px;
-    margin-top: -100px;
-    clear: both;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    margin-bottom: 10px;
+    width: 100%;
     text-align: center;
 }
