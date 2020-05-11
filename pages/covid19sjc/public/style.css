@@ -13,10 +13,13 @@ html {
     --bg-panel: #EBEBEB;
     --color-headings: #4287f5;
     --color-text: #1D1F20;
+    --transition-delay: 0.5s;
 }
 
 body {  
     background-color: var(--bg);
+    margin-bottom: 700px;
+    transition: var(--transition-delay);
 }
 
 .container {
@@ -28,6 +31,7 @@ body {
     "title switch"
     "content content"
     ;
+    transition: var(--transition-delay);
 }
 
 .chart-container {
@@ -35,21 +39,26 @@ body {
     margin: auto;
     height: 80vh;
     width: 80vw;
+    max-height: 600px;
+    max-width: 800px;
 }
 
 h1 {
     margin: 15px;
     color: var(--color-headings);
+    transition: var(--transition-delay);
 }
 
 h4 {
     margin: 15px;
     color: var(--color-text);
+    transition: var(--transition-delay);
 }
 
 h6 {
     margin: 15px;
     color: var(--color-text);
+    transition: var(--transition-delay);
 }
 
 p {
@@ -58,6 +67,7 @@ p {
     font-size: 1.1em;
     line-height: 1.8em;
     margin-top: 2em;
+    transition: var(--transition-delay);
 }
 
 a {
@@ -75,11 +85,33 @@ a:hover {
 
 a:visited {
     color: var(--color-headings);
+    transition: var(--transition-delay);
 }
 
 canvas {
-    /* border: 1px dotted whitesmoke */
-    border: 1px dotted var(--color-text);
+    border-radius: 10px;
+    display: flexbox;
+    transition: var(--transition-delay);
+    position: static;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+canvas:before, canvas:after
+{
+    content:"";
+    position:absolute;
+    z-index:-1;
+    -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    box-shadow:0 0 20px rgba(0,0,0,0.8);
+    top:0;
+    bottom:0;
+    left:10px;
+    right:10px;
+    -moz-border-radius:100px / 10px;
+    border-radius:100px / 10px;
 }
 
 .toggle {
@@ -114,7 +146,7 @@ label::after {
     height: 20px;
     background-color: #EBEBEB;
     border-radius: 90px;
-    transition: 0.3s;
+    transition: var(--transition-delay);
 }
 
 input:checked + label {
@@ -128,4 +160,25 @@ input:checked + label::after {
 
 label:active:after {
     width: 45px;
+}
+
+/* .district-table {
+    color: var(--color-text);
+    position: center;
+    margin: auto;
+    height: 80vh;
+    width: 80vw;
+    max-height: 600px;
+    max-width: 800px;
+    transition: 0.3s;
+} */
+
+.footer {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    background-color:var(--bg);
+    text-align: center;
+    transition: var(--transition-delay);
 }
