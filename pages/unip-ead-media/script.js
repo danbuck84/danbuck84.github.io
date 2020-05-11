@@ -17,5 +17,5 @@ function CALC() {
     
     event.preventDefault();
     
-    document.getElementById("result").innerHTML = "Sua média final foi de " + arred;
+    document.getElementById("result").innerHTML = "Sua média final foi " + arred;
 };
