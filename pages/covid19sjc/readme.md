@@ -1,5 +1,6 @@
 Utilizando:
 https://www.chartjs.org/
+https://jquery.com/
 https://nodejs.org/en/
 https://expressjs.com/pt-br/
 

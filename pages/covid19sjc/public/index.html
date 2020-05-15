@@ -6,6 +6,9 @@
         <link rel="stylesheet" href="style.css">
         <title>Covid-19 em São José dos Campos</title>
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.11.2.js"></script>
+        <script type="text/javascript">jQuery(window).load(function($){ date(); });
+        </script>
     </head>
     <body>
         <div class="container">
@@ -16,7 +19,7 @@
                     Informe Epidemiológico</a> postado diariamente pela prefeitura da cidade.
             </h4>
             
-            <h6>Última atualização: 13/05/2020</h6>
+            <h6>Última atualização: <output id="date"></output></h6>
             
             <div class="toggle">
                 <input id="switch" type="checkbox" name="theme">
@@ -32,6 +35,7 @@
             <script src="totalCases.js"></script>
             <script src="byDistrict.js"></script>
             <script src="theme.js"></script>
+            <script src="date.js"></script>
         </div>
     </body>
     <br>

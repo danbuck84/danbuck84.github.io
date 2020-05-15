@@ -1,7 +1,5 @@
 const html = document.querySelector("html");
 const checkbox = document.querySelector("input[name=theme]");
-// import chartItLight from 'chartIt.js';
-// import chartItDark from 'chartIt.js';
 
 const getStyle = (element, style) =>
     window
