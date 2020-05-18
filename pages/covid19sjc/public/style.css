@@ -90,6 +90,7 @@ a:visited {
 
 canvas {
     border-radius: 10px;
+    margin-bottom: 100px;
     display: flexbox;
     transition: var(--transition-delay);
     position: static;

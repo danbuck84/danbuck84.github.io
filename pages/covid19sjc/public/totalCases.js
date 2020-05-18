@@ -6,6 +6,11 @@ async function totalCases() {
     const options = {
         responsive: true,
         maintainAspectRatio: false,
+        title: {
+            display: true,
+            text: 'Total de casos',
+            fontSize: 18,
+        },
         tooltips: {
             mode: 'index',
             intersect: false
