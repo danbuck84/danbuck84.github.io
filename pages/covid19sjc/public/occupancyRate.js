@@ -10,6 +10,10 @@ function occupancyRate() {
             text: 'Taxa de ocupação de leitos (%)',
             fontSize: 18,
         },
+        animation: {
+            animateScale: true,
+            animateRotate: true,
+        },
         tooltips: {
             mode: 'index',
             intersect: false,
@@ -39,10 +43,10 @@ function occupancyRate() {
         datasets: [
             {
                 data: [
-                    '51.54',
-                    '15.15',
-                    '50.59',
-                    '6.01',
+                    51.54,
+                    15.15,
+                    50.59,
+                    6.01,
                 ],
                 backgroundColor: [
                     'rgba(46, 204, 113,0.5)',
@@ -56,9 +60,10 @@ function occupancyRate() {
                     'rgba(155, 89, 182,1.0)',
                     'rgba(52, 73, 94,1.0)',
                 ],
-            }]
-        };
-        const myChart = new Chart(ctx, {
+            }
+        ],
+    };
+    const myChart = new Chart(ctx, {
         options: options,
         type: 'polarArea',
         data: graph,

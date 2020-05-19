@@ -60,19 +60,17 @@ function byDistrict() {
         datasets: [
             {
                 data: [
-                    // '249'
-                    '32',
-                    '26',
-                    '18',
-                    '15',
-                    '14',
-                    '12',
-                    '12',
-                    '10',
-                    '10',
+                    32,
+                    26,
+                    18,
+                    15,
+                    14,
+                    12,
+                    12,
+                    10,
+                    10,
                 ],
                 backgroundColor: [
-                    // 'rgba(26, 188, 156,0.5)',
                     'rgba(46, 204, 113,0.5)',
                     'rgba(52, 152, 219,0.5)',
                     'rgba(155, 89, 182,0.5)',
@@ -84,7 +82,6 @@ function byDistrict() {
                     'rgba(44, 62, 80,0.5)',
                 ],
                 borderColor: [
-                    // 'rgba(26, 188, 156,1.0)',
                     'rgba(46, 204, 113,1.0)',
                     'rgba(52, 152, 219,1.0)',
                     'rgba(155, 89, 182,1.0)',
@@ -95,9 +92,10 @@ function byDistrict() {
                     'rgba(142, 68, 173,1.0)',
                     'rgba(44, 62, 80,1.0)',
                 ],
-            }]
-        };
-        const myChart = new Chart(ctx, {
+            }
+        ]
+    };
+    const myChart = new Chart(ctx, {
         options: options,
         type: 'horizontalBar',
         data: graph,
