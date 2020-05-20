@@ -7,7 +7,7 @@ function confirmedDown() {
         maintainAspectRatio: false,
         title: {
             display: true,
-            text: 'Casos positivos - por faixa etária',
+            text: 'Óbitos confirmados - por faixa etária',
             fontSize: 18,
         },
         scales: {
