@@ -13,13 +13,14 @@
 <body>
     <div class="sticky-top">
         <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-            <a class="navbar-brand" href="#">Covid-19 em São José dos Campos (<output id="date"></output>)</a>
+            <a class="navbar-brand">Covid-19 em São José dos Campos (<output id="date"></output>)</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-item nav-link" href="#">Início<span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="#mortal-lethal">Taxas de Mortalidade / Letalidade</a>
                     <a class="nav-item nav-link" href="#total-cases">Total de casos</a>
                     <a class="nav-item nav-link" href="#by-district">Bairros mais afetados</a>
                     <a class="nav-item nav-link" href="#occupancy-rate">Taxa de ocupação de leitos</a>
@@ -31,6 +32,33 @@
         </nav>
     </div>
     <div class="container">
+        <table class="table table-hover" id="mortal-lethal">
+            <thead>
+                <tr>
+                    <th scope="col">Local</th>
+                    <th scope="col">Taxa de Mortalidade</th>
+                    <th scope="col">Taxa de Letalidade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">São José dos Campos</th>
+                    <td>5.62%</td>
+                    <td>5.19%</td>
+                </tr>
+                <tr>
+                    <th scope="row">Estado de São Paulo</th>
+                    <td>12.19%</td>
+                    <td>7.68%</td>
+                </tr>
+                <tr>
+                    <th scope="row">Brasil</th>
+                    <td>9.02%</td>
+                    <td>6.47%</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
         <div class="chart-container">
             <canvas id="total-cases"></canvas>
             <p>Fonte: <a href="https://www.sjc.sp.gov.br/servicos/saude/coronavirus/informe-epidemiologico/" target="_blank">REDCAP, E-SUS e SIVEP GRIPE</a></p>
