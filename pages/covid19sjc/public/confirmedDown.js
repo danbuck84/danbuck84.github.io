@@ -50,6 +50,7 @@ function confirmedDown() {
             '61 a 70',
             '71 a 80',
             '81 a 90',
+            '91 a 100',
         ],
         datasets: [
             {
@@ -57,13 +58,15 @@ function confirmedDown() {
                 data: [
                     1,
                     2,
+                    2,
+                    1,
+                    3,
+                    1,
+                    3,
                     0,
-                    1,
-                    3,
-                    1,
-                    3,
                 ],
                 backgroundColor: [
+                    'rgba(155, 89, 182,0.5)',
                     'rgba(155, 89, 182,0.5)',
                     'rgba(155, 89, 182,0.5)',
                     'rgba(155, 89, 182,0.5)',
@@ -80,6 +83,7 @@ function confirmedDown() {
                     'rgba(155, 89, 182,1)',
                     'rgba(155, 89, 182,1)',
                     'rgba(155, 89, 182,1)',
+                    'rgba(155, 89, 182,1)',
                 ],
             },
             {
@@ -87,11 +91,12 @@ function confirmedDown() {
                     data: [
                         0,
                         3,
-                        1,
                         2,
-                        5,
+                        2,
                         6,
+                        7,
                         2,
+                        1,
                     ],
                     backgroundColor: [
                         'rgba(52, 152, 219,0.5)',
@@ -101,8 +106,10 @@ function confirmedDown() {
                         'rgba(52, 152, 219,0.5)',
                         'rgba(52, 152, 219,0.5)',
                         'rgba(52, 152, 219,0.5)',
+                        'rgba(52, 152, 219,0.5)',
                     ],
                     borderColor: [
+                        'rgba(52, 152, 219,1)',
                         'rgba(52, 152, 219,1)',
                         'rgba(52, 152, 219,1)',
                         'rgba(52, 152, 219,1)',
