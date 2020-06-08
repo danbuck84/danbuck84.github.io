@@ -45,8 +45,8 @@ function occupancyRate() {
                 data: [
                     67.17,
                     26.66,
-                    55.17,
-                    6.78,
+                    44.13,
+                    5.58,
                 ],
                 backgroundColor: [
                     'rgba(46, 204, 113,0.5)',
