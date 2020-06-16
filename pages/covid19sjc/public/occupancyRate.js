@@ -43,10 +43,10 @@ function occupancyRate() {
         datasets: [
             {
                 data: [
-                    72.05,
-                    29.69,
-                    55.11,
-                    6.85,
+                    72.85,
+                    30.90,
+                    63.68,
+                    8.06,
                 ],
                 backgroundColor: [
                     'rgba(46, 204, 113,0.5)',
