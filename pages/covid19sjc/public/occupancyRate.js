@@ -37,8 +37,10 @@ function occupancyRate() {
         labels: [
             'UTI Covid-19',
             'UTI Geral',
+            'UTI Hospital Municipal',
             'Enfermaria Covid-19',
             'Enfermaria Geral',
+            'Enfermaria Hospital Municipal',
         ],
         datasets: [
             {
@@ -47,18 +49,24 @@ function occupancyRate() {
                     30.90,
                     63.68,
                     8.06,
+                    71.42,
+                    85.00,
                 ],
                 backgroundColor: [
+                    'rgba(192, 57, 43,0.5)',
+                    'rgba(243, 156, 18,0.5)',
+                    'rgba(230, 126, 34,0.5)',
+                    'rgba(39, 174, 96,0.5)',
+                    'rgba(26, 188, 156,0.5)',
                     'rgba(46, 204, 113,0.5)',
-                    'rgba(52, 152, 219,0.5)',
-                    'rgba(155, 89, 182,0.5)',
-                    'rgba(52, 73, 94,0.5)',
                 ],
                 borderColor: [
+                    'rgba(192, 57, 43,1.0)',
+                    'rgba(243, 156, 18,1.0)',
+                    'rgba(230, 126, 34,1.0)',
+                    'rgba(39, 174, 96,1.0)',
+                    'rgba(26, 188, 156,1.0)',
                     'rgba(46, 204, 113,1.0)',
-                    'rgba(52, 152, 219,1.0)',
-                    'rgba(155, 89, 182,1.0)',
-                    'rgba(52, 73, 94,1.0)',
                 ],
             }
         ],
