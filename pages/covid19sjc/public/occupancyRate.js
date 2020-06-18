@@ -45,28 +45,28 @@ function occupancyRate() {
         datasets: [
             {
                 data: [
-                    72.85,
-                    30.90,
-                    63.68,
-                    8.06,
-                    71.42,
-                    85.00,
+                    73.54, // icu covid
+                    30.90, // icu general
+                    63.68, // icu hm
+                    8.06,  // ward covid
+                    71.42, // ward general
+                    85.00, // ward hm
                 ],
                 backgroundColor: [
-                    'rgba(192, 57, 43,0.5)',
-                    'rgba(243, 156, 18,0.5)',
-                    'rgba(230, 126, 34,0.5)',
-                    'rgba(39, 174, 96,0.5)',
-                    'rgba(26, 188, 156,0.5)',
-                    'rgba(46, 204, 113,0.5)',
+                    'rgba(192, 57, 43,0.5)',  // icu covid
+                    'rgba(243, 156, 18,0.5)', // icu general
+                    'rgba(39, 174, 96,0.5)',  // icu hm
+                    'rgba(231, 76, 60,0.5)',  // ward covid
+                    'rgba(241, 196, 15,0.5)', // ward general
+                    'rgba(46, 204, 113,0.5)', // ward hm
                 ],
                 borderColor: [
-                    'rgba(192, 57, 43,1.0)',
-                    'rgba(243, 156, 18,1.0)',
-                    'rgba(230, 126, 34,1.0)',
-                    'rgba(39, 174, 96,1.0)',
-                    'rgba(26, 188, 156,1.0)',
-                    'rgba(46, 204, 113,1.0)',
+                    'rgba(192, 57, 43,1.0)',  // icu covid
+                    'rgba(243, 156, 18,1.0)', // icu general
+                    'rgba(39, 174, 96,1.0)',  // icu hm
+                    'rgba(231, 76, 60,1.0)',  // ward covid
+                    'rgba(241, 196, 15,1.0)', // ward general
+                    'rgba(46, 204, 113,1.0)', // ward hm
                 ],
             }
         ],
