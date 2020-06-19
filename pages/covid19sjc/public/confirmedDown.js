@@ -57,13 +57,13 @@ function confirmedDown() {
                 label: 'Feminino',
                 data: [
                     1,
+                    3,
                     2,
                     2,
-                    1,
                     6,
                     3,
-                    3,
-                    0,
+                    5,
+                    1,
                 ],
                 backgroundColor: [
                     'rgba(155, 89, 182,0.5)',
@@ -90,12 +90,12 @@ function confirmedDown() {
                 label: 'Masculino',
                     data: [
                         0,
-                        3,
+                        5,
                         3,
                         4,
-                        8,
                         11,
-                        7,
+                        12,
+                        13,
                         1,
                     ],
                     backgroundColor: [
