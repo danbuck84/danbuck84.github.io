@@ -46,30 +46,30 @@ function byDistrict() {
     };
     const graph = {
         labels: [
-            'Aquarius',
             'Bq Eucaliptos',
             'Satelite',
+            'Aquarius',
             'Morumbi',
             'Urbanova',
             'Campo dos Alemaes',
             'Jd Industrias',
             'Pq Industrial',
-            'Vila Industrial',
-            'Vista Verde',
+            'Monte Castelo',
+            'Vl Industrial',
         ],
         datasets: [
             {
                 data: [
+                    117,
+                    105,
+                    104,
                     86,
-                    84,
-                    78,
-                    65,
-                    65,
+                    77,
+                    77,
+                    76,
+                    63,
                     57,
-                    55,
-                    48,
-                    45,
-                    41,
+                    57,
                 ],
                 backgroundColor: [
                     'rgba(246, 229, 141,0.5)', 
