@@ -58,11 +58,11 @@ function confirmedDown() {
                 data: [
                     1,
                     3,
+                    3,
                     2,
-                    2,
-                    8,
+                    9,
                     4,
-                    6,
+                    7,
                     2,
                 ],
                 backgroundColor: [
@@ -91,11 +91,11 @@ function confirmedDown() {
                     data: [
                         0,
                         5,
-                        3,
-                        6,
-                        18,
-                        14,
-                        14,
+                        4,
+                        9,
+                        20,
+                        16,
+                        15,
                         1,
                     ],
                     backgroundColor: [
