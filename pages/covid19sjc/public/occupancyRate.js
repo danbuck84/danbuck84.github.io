@@ -45,12 +45,12 @@ function occupancyRate() {
         datasets: [
             {
                 data: [
-                    78.9, // icu covid
-                    38.5, // icu general
-                    59.7, // icu hm
-                    66.9,  // ward covid
-                    8.6, // ward general
-                    88.5, // ward hm
+                    81.1, // icu covid
+                    39.1, // icu general
+                    67.7, // icu hm
+                    59.6,  // ward covid
+                    8.4, // ward general
+                    60.6, // ward hm
                 ],
                 backgroundColor: [
                     'rgba(192, 57, 43,0.5)',  // icu covid
