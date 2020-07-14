@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Covid-19 em São José dos Campos</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.2.js"></script>
     <script type="text/javascript">jQuery(window).load(function($){ date(); });</script>
     <link rel="stylesheet" href="style.css">
@@ -14,7 +14,7 @@
     <div class="sticky-top">
         <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
             <a class="navbar-brand">Covid-19 em São José dos Campos</a>
-            <p>última atualização: 13/07/2020 às 15:20</p>
+            <p>última atualização: 10/07/2020 às 21:00</p>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -22,8 +22,12 @@
                 <div class="navbar-nav">
                     <a class="nav-item nav-link" href="#">Início<span class="sr-only">(current)</span></a>
                     <a class="nav-item nav-link" href="#mortal-lethal">Taxas de Mortalidade / Letalidade</a>
-                    <a class="nav-item nav-link" href="#confirmed-cases">Casos Confirmados</a>
-                    <a class="nav-item nav-link" href="#confirmed-down">Óbitos Confirmados</a>
+                    <a class="nav-item nav-link" href="#total-cases">Total de casos</a>
+                    <a class="nav-item nav-link" href="#occupancy-rate">Taxa de ocupação de leitos</a>
+                    <a class="nav-item nav-link" href="#by-district">Bairros mais afetados</a>
+                    <a class="nav-item nav-link" href="#cases-by-gender">Casos positivos - por sexo</a>
+                    <a class="nav-item nav-link" href="#cases-by-age">Casos positivos - por faixa etária</a>
+                    <a class="nav-item nav-link" href="#confirmed-down">Óbitos confirmados - por faixa etária</a>
                 </div>
             </div>
         </nav>
@@ -57,46 +61,34 @@
         </table>
         <br>
         <div class="chart-container">
-            <h1 id="confirmed-cases">Casos Confirmados</h1>
-            <br>
-            <h2>Casos Novos</h1>
-            <canvas id="positive-daily-new"></canvas>
+            <canvas id="total-cases"></canvas>
             <p>Fonte: <a href="https://www.sjc.sp.gov.br/servicos/saude/coronavirus/informe-epidemiologico/" target="_blank">REDCAP, E-SUS e SIVEP GRIPE</a></p>
             <br>
-            <canvas id="positive-weekly-new"></canvas>
+            <canvas id="occupancy-rate"></canvas>
             <p>Fonte: <a href="https://www.sjc.sp.gov.br/servicos/saude/coronavirus/informe-epidemiologico/" target="_blank">REDCAP, E-SUS e SIVEP GRIPE</a></p>
             <br>
-            <h2>Casos Acumulados</h2>
-            <canvas id="positive-daily-total"></canvas>
+            <canvas id="by-district"></canvas>
             <p>Fonte: <a href="https://www.sjc.sp.gov.br/servicos/saude/coronavirus/informe-epidemiologico/" target="_blank">REDCAP, E-SUS e SIVEP GRIPE</a></p>
             <br>
-            <canvas id="positive-weekly-total"></canvas>
+            <canvas id="cases-by-gender"></canvas>
+            <p>Fonte: <a href="https://www.sjc.sp.gov.br/servicos/saude/coronavirus/informe-epidemiologico/" target="_blank">REDCAP, E-SUS e SIVEP GRIPE</a></p>
+            <br>
+            <canvas id="cases-by-age"></canvas>
+            <p>Fonte: <a href="https://www.sjc.sp.gov.br/servicos/saude/coronavirus/informe-epidemiologico/" target="_blank">REDCAP, E-SUS e SIVEP GRIPE</a></p>
+            <br>
+            <canvas id="confirmed-down"></canvas>
             <p>Fonte: <a href="https://www.sjc.sp.gov.br/servicos/saude/coronavirus/informe-epidemiologico/" target="_blank">REDCAP, E-SUS e SIVEP GRIPE</a></p>
             <br>
             <br>
-            <br>
-            <h1 id="confirmed-down">Óbitos Confirmados</h1>
-            <br>
-            <h2>Óbitos Novos</h2>
-            <canvas id="down-daily-new"></canvas>
-            <p>Fonte: <a href="https://www.sjc.sp.gov.br/servicos/saude/coronavirus/informe-epidemiologico/" target="_blank">REDCAP, E-SUS e SIVEP GRIPE</a></p>
-            <br>
-            <canvas id="down-weekly-new"></canvas>
-            <p>Fonte: <a href="https://www.sjc.sp.gov.br/servicos/saude/coronavirus/informe-epidemiologico/" target="_blank">REDCAP, E-SUS e SIVEP GRIPE</a></p>
-            <br>
-            <h2>Óbitos Acumulados</h2>
-            <canvas id="down-daily-total"></canvas>
-            <p>Fonte: <a href="https://www.sjc.sp.gov.br/servicos/saude/coronavirus/informe-epidemiologico/" target="_blank">REDCAP, E-SUS e SIVEP GRIPE</a></p>
-            <br>
-            <canvas id="down-weekly-total"></canvas>
-            <p>Fonte: <a href="https://www.sjc.sp.gov.br/servicos/saude/coronavirus/informe-epidemiologico/" target="_blank">REDCAP, E-SUS e SIVEP GRIPE</a></p>
             <br>
         </div>
 
-        <script src="../public/positiveCasesDailyGraph.js"></script>
-        <script src="../public/positiveCasesWeeklyGraph.js"></script>
-        <script src="../public/downCasesDailyGraph.js"></script>
-        <script src="../public/downCasesWeeklyGraph.js"></script>
+        <script src="../public/totalCases.js"></script>
+        <script src="../public/occupancyRate.js"></script>
+        <script src="../public/byDistrict.js"></script>
+        <script src="../public/casesByGender.js"></script>
+        <script src="../public/casesByAge.js"></script>
+        <script src="../public/confirmedDown.js"></script>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
