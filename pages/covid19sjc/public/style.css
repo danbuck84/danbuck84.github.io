@@ -33,3 +33,7 @@ a:visited {
     text-align: center;
     transition: var(--transition-delay);
 }
+
+p {
+    font-size: 12px;
+}

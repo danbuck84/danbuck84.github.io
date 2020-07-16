@@ -19,7 +19,7 @@ async function positiveCasesWeeklyGraph() {
                 display: true,
                 gridLines: {
                     display: true,
-                    color: "rgba(255, 255, 255, 0.05)"
+                    color: ['rgba(255, 255, 255, 0.5)']
                 },
                 stacked: false
             }],
@@ -27,7 +27,7 @@ async function positiveCasesWeeklyGraph() {
                 display: true,
                 gridLines: {
                     display: true,
-                    color: ['rgba(255, 255, 255, 0.5)']
+                    color: "rgba(255, 255, 255, 0.05)"
                 },
             }]
         }
@@ -38,8 +38,8 @@ async function positiveCasesWeeklyGraph() {
             {
                 label: 'Casos semanais',
                 data: data.yPositiveWeekly,
-                backgroundColor: ['rgba(0, 65, 139, 0.5)'],
-                borderColor: ['rgba(0, 65, 139, 1)'],
+                backgroundColor: 'rgba(0, 65, 139, 0.5)',
+                borderColor: 'rgba(0, 65, 139, 1)',
                 borderWidth: 2,
                 lineTension: 0.5,
                 fill: true
@@ -94,7 +94,7 @@ async function positiveCasesWeeklyTotal() {
                 display: true,
                 gridLines: {
                     display: true,
-                    color: "rgba(255, 255, 255, 0.05)"
+                    color: ['rgba(255, 255, 255, 0.5)']
                 },
                 stacked: false
             }],
@@ -102,7 +102,7 @@ async function positiveCasesWeeklyTotal() {
                 display: true,
                 gridLines: {
                     display: true,
-                    color: ['rgba(255, 255, 255, 0.5)']
+                    color: "rgba(255, 255, 255, 0.05)"
                 },
             }]
         }
@@ -113,8 +113,8 @@ async function positiveCasesWeeklyTotal() {
             {
                 label: 'Casos semanais',
                 data: data.yPositiveWeekly,
-                backgroundColor: ['rgba(0, 65, 139, 0.5)'],
-                borderColor: ['rgba(0, 65, 139, 1)'],
+                backgroundColor: 'rgba(0, 65, 139, 0.5)',
+                borderColor: 'rgba(0, 65, 139, 1)',
                 borderWidth: 2,
                 lineTension: 0.5,
                 fill: true
