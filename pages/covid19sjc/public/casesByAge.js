@@ -6,7 +6,7 @@ function casesByAge() {
         responsive: true,
         maintainAspectRatio: false,
         title: {
-            display: true,
+            display: false,
             text: 'Casos positivos - por faixa etária',
             fontSize: 18,
         },

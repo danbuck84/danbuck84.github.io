@@ -6,7 +6,7 @@ function casesByGender() {
         responsive: true,
         maintainAspectRatio: false,
         title: {
-            display: true,
+            display: false,
             text: 'Casos positivos - por sexo',
             fontSize: 18,
         },

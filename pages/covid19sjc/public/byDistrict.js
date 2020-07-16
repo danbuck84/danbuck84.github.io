@@ -4,7 +4,7 @@ function byDistrict() {
     const ctx = document.getElementById('by-district').getContext('2d');
     const options = {
         title: {
-            display: true,
+            display: false,
             text: 'Bairros mais afetados (casos positivos)',
             fontSize: 18,
         },

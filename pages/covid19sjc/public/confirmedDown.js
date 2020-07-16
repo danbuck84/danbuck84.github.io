@@ -6,7 +6,7 @@ function confirmedDown() {
         responsive: true,
         maintainAspectRatio: false,
         title: {
-            display: true,
+            display: false,
             text: 'Óbitos confirmados - por faixa etária',
             fontSize: 18,
         },

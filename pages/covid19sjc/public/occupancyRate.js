@@ -6,7 +6,7 @@ function occupancyRate() {
         responsive: true,
         maintainAspectRatio: false,
         title: {
-            display: true,
+            display: false,
             text: 'Taxa de ocupação de leitos (%)',
             fontSize: 18,
         },
@@ -45,11 +45,11 @@ function occupancyRate() {
         datasets: [
             {
                 data: [
-                    73.3, // icu covid
-                    36.7, // icu general
-                    59.7, // icu hm
-                    69.8,  // ward covid
-                    10.2, // ward general
+                    75.6, // icu covid
+                    37.6, // icu general
+                    67.7, // icu hm
+                    65.3,  // ward covid
+                    10.3, // ward general
                     86.4, // ward hm
                 ],
                 backgroundColor: [
