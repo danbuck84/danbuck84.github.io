@@ -1,6 +1,6 @@
 occupancyRate();
                 
-function occupancyRate() {
+async function occupancyRate() {
     const ctx = document.getElementById('occupancy-rate').getContext('2d');
     const options = {
         responsive: true,
@@ -45,12 +45,12 @@ function occupancyRate() {
         datasets: [
             {
                 data: [
-                    75.6, // icu covid
-                    37.6, // icu general
-                    67.7, // icu hm
-                    65.3,  // ward covid
-                    10.3, // ward general
-                    86.4, // ward hm
+                    72, // icu covid
+                    36.7, // icu general
+                    60, // icu hm
+                    64.8,  // ward covid
+                    11.3, // ward general
+                    75, // ward hm
                 ],
                 backgroundColor: [
                     'rgba(192, 57, 43,0.5)',  // icu covid

@@ -35,8 +35,8 @@ function casesByGender() {
         datasets: [
             {
                 data: [
-                    1667,
-                    1693,
+                    2353,
+                    2388,
                 ],
                 backgroundColor: [
                     'rgba(155, 89, 182,0.5)',
