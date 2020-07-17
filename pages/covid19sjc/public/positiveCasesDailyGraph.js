@@ -41,7 +41,7 @@ async function positiveCasesDailyGraph() {
                 data: data.yPositiveDaily,
                 backgroundColor: 'rgba(0, 65, 139, 0.5)',
                 borderColor: 'rgba(0, 65, 139, 1)',
-                borderWidth: 2,
+                borderWidth: 1,
                 lineTension: 0.5,
                 fill: true
             }
@@ -117,7 +117,7 @@ async function positiveCasesDailyTotal() {
                 data: data.yPositiveDaily,
                 backgroundColor: 'rgba(0, 65, 139, 0.5)',
                 borderColor: 'rgba(0, 65, 139, 1)',
-                borderWidth: 2,
+                borderWidth: 1,
                 lineTension: 0.5,
                 fill: true
             }

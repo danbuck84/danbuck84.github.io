@@ -8,21 +8,22 @@
     <script src="https://code.jquery.com/jquery-1.11.2.js"></script>
     <script type="text/javascript">jQuery(window).load(function($){ date(); });</script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
 <body>
     <div class="sticky-top">
         <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
             <a class="navbar-brand">Covid-19 em São José dos Campos</a>
-            <p>última atualização: 16/07/2020 às 19:15</p>
+            <p>última atualização: 17/07/2020 às 17:00</p>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="#">Painel Geral<span class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link" href="/public/details.html">Detalhado</a>
-                    <a class="nav-item nav-link" href="/public/about.html">Sobre</a>
+                    <a class="nav-item nav-link" href="#general-panel">Painel Geral</a>
+                    <a class="nav-item nav-link" href="#details">Detalhado</a>
+                    <a class="nav-item nav-link" href="#about">Sobre</a>
                 </div>
             </div>
         </nav>
@@ -54,53 +55,221 @@
                 </tr>
             </tbody>
         </table>
-        <br>
+
         <div class="chart-container">
             <h1 id="confirmed-cases">Casos Confirmados</h1>
             <br>
-            <h5>Casos novos de COVID-19 por data de notificação</h5>
+
+            <h6>Casos novos de COVID-19 por data de notificação</h6>
             <canvas id="positive-daily-new"></canvas>
-            <p>Fonte: <a href="https://www.sjc.sp.gov.br/servicos/saude/coronavirus/informe-epidemiologico/" target="_blank">REDCAP, E-SUS e SIVEP GRIPE</a></p>
+            <span>Fonte: <a href="https://www.sjc.sp.gov.br/servicos/saude/coronavirus/informe-epidemiologico/" target="_blank">REDCAP, E-SUS e SIVEP GRIPE</a></span>
             <br>
-            <h5>Casos novos de COVID-19 por Semana Epidemiológica de notificação</h5>
+
+            <h6>Casos novos de COVID-19 por Semana Epidemiológica de notificação</h6>
             <canvas id="positive-weekly-new"></canvas>
-            <p>Fonte: <a href="https://www.sjc.sp.gov.br/servicos/saude/coronavirus/informe-epidemiologico/" target="_blank">REDCAP, E-SUS e SIVEP GRIPE</a></p>
+            <span>Fonte: <a href="https://www.sjc.sp.gov.br/servicos/saude/coronavirus/informe-epidemiologico/" target="_blank">REDCAP, E-SUS e SIVEP GRIPE</a></span>
             <br>
-            <h5>Casos acumulados de COVID-19 por data de notificação</h5>
+
+            <h6>Casos acumulados de COVID-19 por data de notificação</h6>
             <canvas id="positive-daily-total"></canvas>
-            <p>Fonte: <a href="https://www.sjc.sp.gov.br/servicos/saude/coronavirus/informe-epidemiologico/" target="_blank">REDCAP, E-SUS e SIVEP GRIPE</a></p>
+            <span>Fonte: <a href="https://www.sjc.sp.gov.br/servicos/saude/coronavirus/informe-epidemiologico/" target="_blank">REDCAP, E-SUS e SIVEP GRIPE</a></span>
             <br>
-            <h5>Casos novos de COVID-19 por Semana Epidemiológica de notificação</h5>
+
+            <h6>Casos novos de COVID-19 por Semana Epidemiológica de notificação</h6>
             <canvas id="positive-weekly-total"></canvas>
-            <p>Fonte: <a href="https://www.sjc.sp.gov.br/servicos/saude/coronavirus/informe-epidemiologico/" target="_blank">REDCAP, E-SUS e SIVEP GRIPE</a></p>
+            <span>Fonte: <a href="https://www.sjc.sp.gov.br/servicos/saude/coronavirus/informe-epidemiologico/" target="_blank">REDCAP, E-SUS e SIVEP GRIPE</a></span>
             <br>
             <br>
             <br>
+
             <h1 id="confirmed-down">Óbitos Confirmados</h1>
             <br>
-            <h5>Óbitos de COVID-19 por data de notificação</h5>
+
+            <h6>Óbitos de COVID-19 por data de notificação</h6>
             <canvas id="down-daily-new"></canvas>
-            <p>Fonte: <a href="https://www.sjc.sp.gov.br/servicos/saude/coronavirus/informe-epidemiologico/" target="_blank">REDCAP, E-SUS e SIVEP GRIPE</a></p>
+            <span>Fonte: <a href="https://www.sjc.sp.gov.br/servicos/saude/coronavirus/informe-epidemiologico/" target="_blank">REDCAP, E-SUS e SIVEP GRIPE</a></span>
             <br>
-            <h5>Óbitos de COVID-19 por Semana Epidemiológica de notificação</h5>
+
+            <h6>Óbitos de COVID-19 por Semana Epidemiológica de notificação</h6>
             <canvas id="down-weekly-new"></canvas>
-            <p>Fonte: <a href="https://www.sjc.sp.gov.br/servicos/saude/coronavirus/informe-epidemiologico/" target="_blank">REDCAP, E-SUS e SIVEP GRIPE</a></p>
+            <span>Fonte: <a href="https://www.sjc.sp.gov.br/servicos/saude/coronavirus/informe-epidemiologico/" target="_blank">REDCAP, E-SUS e SIVEP GRIPE</a></span>
             <br>
-            <h5>Óbitos acumuladosde COVID-19 por data de notificação</h5>
+
+            <h6>Óbitos acumuladosde COVID-19 por data de notificação</h6>
             <canvas id="down-daily-total"></canvas>
-            <p>Fonte: <a href="https://www.sjc.sp.gov.br/servicos/saude/coronavirus/informe-epidemiologico/" target="_blank">REDCAP, E-SUS e SIVEP GRIPE</a></p>
+            <span>Fonte: <a href="https://www.sjc.sp.gov.br/servicos/saude/coronavirus/informe-epidemiologico/" target="_blank">REDCAP, E-SUS e SIVEP GRIPE</a></span>
             <br>
-            <h5>Óbitos acumulados de COVID-19 por Semana Epidemiológica de notificação</h5>
+
+            <h6>Óbitos acumulados de COVID-19 por Semana Epidemiológica de notificação</h6>
             <canvas id="down-weekly-total"></canvas>
-            <p>Fonte: <a href="https://www.sjc.sp.gov.br/servicos/saude/coronavirus/informe-epidemiologico/" target="_blank">REDCAP, E-SUS e SIVEP GRIPE</a></p>
+            <span>Fonte: <a href="https://www.sjc.sp.gov.br/servicos/saude/coronavirus/informe-epidemiologico/" target="_blank">REDCAP, E-SUS e SIVEP GRIPE</a></span>
+            <br>
+
+            <hr>
+
+            <h1 id="details">Painel Detalhado</h1>
+            <br>
+
+            <h6>Taxa de ocupação de leitos - geral e exclusivo (%)</h6>
+            <canvas id="occupancy-rate"></canvas>
+            <span>Fonte: <a href="https://www.sjc.sp.gov.br/servicos/saude/coronavirus/informe-epidemiologico/" target="_blank">REDCAP, E-SUS e SIVEP GRIPE</a></span>
+            <br>
+
+            <h6>TOP10 Bairros mais afetados pela COVID-19 em São José dos Campos</h6>
+            <canvas id="by-district"></canvas>
+            <span>Fonte: <a href="https://www.sjc.sp.gov.br/servicos/saude/coronavirus/informe-epidemiologico/" target="_blank">REDCAP, E-SUS e SIVEP GRIPE</a></span>
+            <br>
+            <br>
+
+            <h1 id="positive-cases">Casos Positivos</h1>
+            <br>
+
+            <h6>Casos positivos de COVID-19 por sexo</h6>
+            <canvas id="cases-by-gender"></canvas>
+            <span>Fonte: <a href="https://www.sjc.sp.gov.br/servicos/saude/coronavirus/informe-epidemiologico/" target="_blank">REDCAP, E-SUS e SIVEP GRIPE</a></span>
+            <br>
+
+            <h6>Casos positivos de COVID-19 por faixa etária</h6>
+            <canvas id="cases-by-age"></canvas>
+            <span>Fonte: <a href="https://www.sjc.sp.gov.br/servicos/saude/coronavirus/informe-epidemiologico/" target="_blank">REDCAP, E-SUS e SIVEP GRIPE</a></span>
+            <br>
+            <br>
+
+            <!-- <h1 id="down-detailed">Óbitos Detalhados</h1>
+            <br>
+
+            <h6>Óbitos de COVID-19 por sexo e faixa etária</h6>
+            <canvas id="confirmed-down"></canvas>
+            <span>Fonte: <a href="https://www.sjc.sp.gov.br/servicos/saude/coronavirus/informe-epidemiologico/" target="_blank">REDCAP, E-SUS e SIVEP GRIPE</a></span>
+            <br> -->
+
+            <hr>
+
+            <h1 id="about">Sobre o Painel</h1>
+            <br>
+            <h4>Introdução</h4>
+            <p>Este painel foi desenvolvido para ser o veículo não-oficial de comunicação sobre a situação epidemiológica da COVID-19 em São José dos Campos - SP.</p>
+
+            <h4>Atualizações</h4>
+            <p>O processo de atualização dos dados sobre casos e óbitos confirmados por COVID-19 em São José dos Campos é realizado diariamente pela Prefeitura da Cidade através das informações oficiais repassadas pelos Sistemas de Informação de Mortalidade e Sistemas de notificação do Ministério da Saúde (E-SUS, REDCAP e SIVEP GRIPE). Os dados fornecidos pela Prefeitura são consolidados e disponibilizados publicamente todos os dias, em torno das 19h.</p>
+
+            <h4>Limitações</h4>
+            <p>O processo de atualização das informações no município é dinâmico e complexo. Os dados informados diariamente são sujeitos a alterações. Considerando a pluralidade de cada setor socioeconômico no que diz respeito a porte populacional, infraestrutura e organização dos serviços de saúde, além de todos os desafios que a pandemia de COVID-19 impõe, é possível que haja mudanças no número de casos ou óbitos em decorrência de erros ou atrasos no repasse das informações.</p>
+            <p>Os casos e óbitos são atualizados por data de notificação. A Secretaria da Saúde vem trabalhando para divulgação desses indicadores.</p>
+
+            <h5>Conceitos básicos</h5>
+
+            <h4>Casos novos</h4>
+            <p>Número de casos novos confirmados por COVID-19 que foram registrados pela Secretaria Municipal de Saúde em relação ao dia anterior.</p>
+            <p>Reflete o número de casos diagnosticados e registrados pela secretaria de saúde, não significando a data de início dos sintomas. Para análise dos casos por data de início dos sintomas, deve-se utilizar os dados do sistema e-SUS VE e do Sistema de Vigilância Epidemiológica da Gripe (SIVEP-Gripe), para os casos de Síndrome Respiratória Aguda Grave (SRAG) Hospitalizados, além dos dados provenientes dos sistemas de informação de Síndrome Gripal implantados em alguns estados.</p>
+
+            <h4>Casos acumulados</h4>
+            <p>Número total de casos confirmados por COVID-19 que foram registrados pela Secretaria Municipal de Saúde no período considerado.</p>
+
+            <h4>Óbitos novos</h4>
+            <p>Número de óbitos novos confirmados por COVID-19 que foram registrados pela Secretaria Municipal de Saúde em relação ao dia anterior.</p>
+            <p>Reflete o número de óbitos reportados pelas secretaria de saúde na data em que tiveram a confirmação laboratorial ou clínico epidemiológica. Não reflete a data de ocorrência do óbito. Para análise de óbitos por data de ocorrência, deve-se utilizar os dados registrados no Sistema de Vigilância Epidemiológica da Gripe (SIVEP-Gripe), onde devem ser notificados todos os casos de Síndrome Respiratória Aguda Grave (SRAG) Hospitalizados ou óbitos por SRAG, independente de hospitalização. Também devem ser observados os registros de óbitos no Sistema de Informação sobre Mortalidade (SIM).</p>
+
+            <h4>Óbitos acumulados</h4>
+            <p>Número total de óbitos confirmados por COVID-19 que foram registrados pela Secretaria Municipal de Saúde no período considerado.</p>
+
+            <h5>Coeficiente de Incidência de COVID-19</h5>
+
+            <h4>Conceituação</h4>
+            <p>Número de casos confirmados de COVID-19 por 100.000 habitantes, na população residente em determinado espaço geográfico, no período considerado.</p>
+            <p>A definição de caso confirmado de COVID-19 baseia-se em critérios adotados pelo Ministério da Saúde para orientar as ações de vigilância epidemiológica da doença em todo o país.</p>
+
+            <h4>Interpretação</h4>
+            <p>Estima o risco de ocorrência de casos de COVID-19 numa determinada população num período considerado.</p>
+
+            <h4>Usos</h4>
+            <p>Analisar variações populacionais, geográficas e temporais da distribuição dos casos confirmados de COVID-19, como parte do conjunto de ações de vigilância epidemiológica da doença.</p>
+            <p>Contribuir na avaliação dos níveis de saúde da população, prestando-se para comparações nacionais e internacionais.</p>
+            <p>Subsidiar processos de planejamento, gestão e avaliação de políticas e ações de saúde direcionadas para a o enfrentamento da COVID-19 no contexto da prevenção e controle das doenças.</p>
+
+            <h4>Limitações</h4>
+            <p>Depende das condições técnico-operacionais do sistema de vigilância epidemiológica, em cada área geográfica, para detectar, notificar, investigar e realizar testes laboratoriais específicos para a confirmação diagnóstica de casos de COVID-19.</p>
+
+            <h4>Fonte</h4>
+            <p>Site da Prefeitura de São José dos Campos. Informes Epidemiológicos atualizados diariamente em torno das 16h.</p>
+            <p>*População: Estimativas de 2019 utilizadas pelo TCU para determinação das cotas do FPM (sem sexo e faixa etária). Disponível em <a href="https://datasus.saude.gov.br/populacao-residente/">https://datasus.saude.gov.br/populacao-residente/</a></p>
+
+            <h4>Método de cálculo</h4>
+            <p>Número de casos confirmados de COVID-19 em residentes X 100.000 / População* total residente no período determinado.</p>
+
+            <h5>Coeficiente de Mortalidade por COVID-19</h5>
+
+            <h4>Conceituação</h4>
+            <p>Número de óbitos por doenças COVID-19, por 100 mil habitantes, na população residente em determinado espaço geográfico, no ano considerado.</p>
+
+            <h4>Interpretação</h4>
+            <p>Estima o risco de morte pela COVID-19 consideradas e dimensiona a sua magnitude como problema de saúde pública.</p>
+            <p>Reflete também a efetividade de medidas de prevenção e controle, bem como as condições de diagnóstico e da assistência médica dispensada.</p>
+            <p>A taxa de mortalidade específica não padronizada por idade está sujeita à influência de variações na composição etária da população, o que exige cautela nas comparações entre áreas geográficas e para períodos distintos.</p>
+
+            <h4>Usos</h4>
+            <p>Analisar variações populacionais, geográficas e temporais da mortalidade por COVID-19 em segmentos populacionais, identificando situações de desigualdade e tendências que demandem ações e estudos específicos.</p>
+            <p>Contribuir para comparações nacionais e internacionais.</p>
+            <p>Subsidiar processos de planejamento, gestão e avaliação de políticas públicas de promoção, proteção e recuperação da saúde, concernentes à COVID-19.</p>
+
+            <h4>Limitações</h4>
+            <p>Requer correção da subenumeração de óbitos captados pelo sistema de informação sobre mortalidade.</p>
+            <p>Apresenta restrição de uso sempre que ocorra elevada proporção de óbitos sem assistência médica ou por causas mal definidas.</p>
+            <p>Requer análise de tendências das causas específicas que compõem o indicador, as quais seguem padrões epidemiológicos próprios e diferenciados.</p>
+
+            <h4>Fonte</h4>
+            <p>Site da Prefeitura de São José dos Campos. Informes Epidemiológicos atualizados diariamente em torno das 16h.</p>
+            <p>*População: Estimativas de 2019 utilizadas pelo TCU para determinação das cotas do FPM (sem sexo e faixa etária). Disponível em <a href="https://datasus.saude.gov.br/populacao-residente/"></a></p>
+
+            <h4>Método de cálculo</h4>
+            <p>Número de óbitos confirmados de COVID-19 em residentes X 100.000 / População* total residente no período determinado.</p>
+
+            <h5>Taxa de Letalidade por COVID-19</h5>
+
+            <h4>Conceituação</h4>
+            <p>Número de óbitos confirmados de COVID-19 em relação ao total de casos confirmados, na população residente em determinado espaço geográfico, no período considerado.</p>
+
+            <h4>Interpretação</h4>
+            <p>Esta taxa dá a ideia de gravidade da doença, pois indica o percentual de pessoas que morreram dentre os casos confirmados da doença.</p>
+
+            <h4>Usos</h4>
+            <p>Relacionar o número de óbitos por determinada causa e o número de pessoas que foram acometidas por tal doença.</p>
+            <p>Acompanhar a qualidade da assistência médica oferecida à população.</p>
+
+            <h4>Limitações</h4>
+            <p>Depende necessariamente do número de casos diagnosticados, que no caso do COVID-19, depende da quantidade de exames diagnósticos realizados.</p>
+
+            <h4>Fonte</h4>
+            <p>Site da Prefeitura de São José dos Campos. Informes Epidemiológicos atualizados diariamente em torno das 16h.</p>
+            <p>*População: Estimativas de 2019 utilizadas pelo TCU para determinação das cotas do FPM (sem sexo e faixa etária). Disponível em <a href="https://datasus.saude.gov.br/populacao-residente/"></a></p>
+
+            <h4>Método de cálculo</h4>
+            <p>Número de óbitos confirmados de COVID-19 em determinada área e período X 100 / Número de casos confirmados de COVID-19 em determinada área e período.</p>
+
+            <h5>Estimativa de casos recuperados e em acompanhamento</h5>
+
+            <h4>Casos recuperados</h4>
+            <p>Segundo a Organização Mundial da Saúde, para os casos de COVID-19 confirmados por critério laboratorial, considera-se como recuperados aqueles que tiveram dois resultados negativos para SARS-CoV-2 com pelo menos 1 dia de intervalo. Para os casos leves, a OMS estima que tempo entre o início da infecção e a recuperação dure até 14 dias.</p>
+            <p>Como ainda há uma carência no quantitativo de testes laboratoriais disponíveis no mundo, em vários países não tem sido possível aplicar esse critério, já que o foco é identificar casos novos e isolá-los, tentando conter a transmissão.</p>
+
+            <h4>Casos em acompanhamento</h4>
+            <p>São considerados como “em acompanhamento” todos os casos notificados nos últimos 14 dias pela Secretaria Municipal de Saúde e que não evoluíram para óbito. Além disso, dentre os casos que apresentaram SRAG e foram hospitalizados, consideram-se “em acompanhamento” todos aqueles que foram internados nos últimos 14 dias e que não apresentam registro de alta ou óbito no SIVEP Gripe.</p>
+            <br>
             <br>
         </div>
-
+    
         <script src="../public/positiveCasesDailyGraph.js"></script>
         <script src="../public/positiveCasesWeeklyGraph.js"></script>
         <script src="../public/downCasesDailyGraph.js"></script>
         <script src="../public/downCasesWeeklyGraph.js"></script>
+        <script src="../public/occupancyRate.js"></script>
+        <script src="../public/byDistrict.js"></script>
+        <script src="../public/casesByGender.js"></script>
+        <script src="../public/casesByAge.js"></script>
+        <script src="../public/confirmedDown.js"></script>
     </div>
+
+    <a class="gotopbtn" href="#"><i class="fas fa-arrow-up"></i></a>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

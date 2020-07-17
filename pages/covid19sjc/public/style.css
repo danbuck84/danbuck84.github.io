@@ -1,4 +1,10 @@
+html {
+    scroll-behavior: smooth;
+}
+
 .chart-container {
+    display: flex;
+    flex-direction: column;
     position: relative;
     margin: auto;
     height: 80vh;
@@ -29,11 +35,39 @@ a:visited {
     left: 0px;
     bottom: 0px;
     width: 100%;
-    background-color:var(--bg);
+    background-color: #e3f2fd;
     text-align: center;
     transition: var(--transition-delay);
 }
 
 p {
+    font-size: 14px;
+}
+
+span {
     font-size: 12px;
+}
+
+.gotopbtn {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    background: #e3f2fd;
+    bottom: 40px;
+    right: 10px;
+    border-radius: 50%;
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    color: var(--color-headings);
+    transition: var(--transition-delay);
+    font-size: 22px;
+}
+
+h4 {
+    color: rgba(0, 65, 139, 1);
+}
+
+h5 {
+    color: rgba(255, 188, 0, 1);
 }

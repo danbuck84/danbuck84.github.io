@@ -41,7 +41,7 @@ async function downCasesDailyGraph() {
                 data: data.ydownDaily,
                 backgroundColor: 'rgba(255, 188, 0, 0.5)',
                 borderColor: 'rgba(255, 188, 0, 1)',
-                borderWidth: 2,
+                borderWidth: 1,
                 lineTension: 0.5,
                 fill: true
             }
@@ -117,7 +117,7 @@ async function downCasesDailyTotal() {
                 data: data.ydownDaily,
                 backgroundColor: 'rgba(255, 188, 0, 0.5)',
                 borderColor: 'rgba(255, 188, 0, 1)',
-                borderWidth: 2,
+                borderWidth: 1,
                 lineTension: 0.5,
                 fill: true
             }

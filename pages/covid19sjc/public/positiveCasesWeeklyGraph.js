@@ -40,7 +40,7 @@ async function positiveCasesWeeklyGraph() {
                 data: data.yPositiveWeekly,
                 backgroundColor: 'rgba(0, 65, 139, 0.5)',
                 borderColor: 'rgba(0, 65, 139, 1)',
-                borderWidth: 2,
+                borderWidth: 1,
                 lineTension: 0.5,
                 fill: true
             }
@@ -115,7 +115,7 @@ async function positiveCasesWeeklyTotal() {
                 data: data.yPositiveWeekly,
                 backgroundColor: 'rgba(0, 65, 139, 0.5)',
                 borderColor: 'rgba(0, 65, 139, 1)',
-                borderWidth: 2,
+                borderWidth: 1,
                 lineTension: 0.5,
                 fill: true
             }
