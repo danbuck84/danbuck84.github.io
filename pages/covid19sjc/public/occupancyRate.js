@@ -45,12 +45,12 @@ async function occupancyRate() {
         datasets: [
             {
                 data: [
-                    72, // icu covid
-                    36.7, // icu general
-                    60, // icu hm
-                    64.8,  // ward covid
-                    11.3, // ward general
-                    75, // ward hm
+                    73.8, // icu covid
+                    37.6, // icu general
+                    73.8, // icu hm
+                    62.6,  // ward covid
+                    10.7, // ward general
+                    68.8, // ward hm
                 ],
                 backgroundColor: [
                     'rgba(192, 57, 43,0.5)',  // icu covid
