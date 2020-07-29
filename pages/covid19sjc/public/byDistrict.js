@@ -47,9 +47,9 @@ function byDistrict() {
     const graph = {
         labels: [
             'Bq Eucaliptos',
-            'Satelite',
             'Morumbi',
             'Campo dos Alemaes',
+            'Satelite',
             'Aquarius',
             'Jd Industrias',
             'Urbanova',
@@ -60,16 +60,16 @@ function byDistrict() {
         datasets: [
             {
                 data: [
-                    207,
-                    160,
-                    153,
-                    153,
-                    151,
-                    127,
-                    114,
-                    94,
-                    93,
-                    89,
+                    255,
+                    198,
+                    198,
+                    192,
+                    171,
+                    162,
+                    133,
+                    122,
+                    121,
+                    120,
                 ],
                 backgroundColor: [
                     'rgba(246, 229, 141,0.5)', 
