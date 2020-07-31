@@ -11,18 +11,37 @@ function confirmedDown() {
             fontSize: 18,
         },
         scales: {
-            xAxes: [{
-                stacked: true,
-                display: false,
-            }],
             yAxes: [{
-                stacked: true,
+                // id: 'left-y-axis',
+                // type: 'linear',
                 display: true,
                 gridLines: {
                     display: true,
                     color: "rgba(255, 255, 255, 0.05)"
                 },
+                stacked: true,
+                // position: 'left',
+            },
+            {
+                // id: 'right-y-axis',
+                // type: 'linear',
+                display: false,
+                gridLines: {
+                    display: true,
+                    color: "rgba(255, 255, 255, 0.05)"
+                },
+                stacked: true,
+                // position: 'right',
             }],
+            xAxes: [{
+                display: true,
+                gridLines: {
+                    display: true,
+                    color: ['rgba(255, 255, 255, 0.5)']
+                },
+                stacked: true,
+                position: 'right',
+            }]
         },
         animation: {
             animateScale: true,
@@ -57,13 +76,13 @@ function confirmedDown() {
                 label: 'Feminino',
                 data: [
                     1,
-                    4,
-                    8,
-                    7,
-                    15,
-                    8,
-                    17,
                     5,
+                    8,
+                    9,
+                    15,
+                    15,
+                    20,
+                    7,
                 ],
                 backgroundColor: [
                     'rgba(155, 89, 182,0.5)',
@@ -92,10 +111,10 @@ function confirmedDown() {
                         0,
                         6,
                         7,
-                        16,
-                        35,
-                        27,
-                        22,
+                        18,
+                        38,
+                        28,
+                        24,
                         3,
                     ],
                     backgroundColor: [
