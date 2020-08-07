@@ -49,7 +49,7 @@ async function downCasesWeeklyGraph() {
     };
     const myChart = new Chart(ctx, {
         options: options,
-        type: 'bar',
+        type: 'line',
         data: graph,
     });
 }
@@ -125,7 +125,7 @@ async function downCasesWeeklyTotal() {
     };
     const myChart = new Chart(ctx, {
         options: options,
-        type: 'bar',
+        type: 'line',
         data: graph,
     });
 }

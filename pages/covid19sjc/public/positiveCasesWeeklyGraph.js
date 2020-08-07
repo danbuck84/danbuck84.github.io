@@ -48,7 +48,7 @@ async function positiveCasesWeeklyGraph() {
     };
     const myChart = new Chart(ctx, {
         options: options,
-        type: 'bar',
+        type: 'line',
         data: graph,
     });
 }
@@ -123,7 +123,7 @@ async function positiveCasesWeeklyTotal() {
     };
     const myChart = new Chart(ctx, {
         options: options,
-        type: 'bar',
+        type: 'line',
         data: graph,
     });
 }
